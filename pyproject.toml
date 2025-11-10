@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "wifiqr"
+version = "0.1.0"
+description = "Generate JPG WiFi QR codes from environment variables"
+authors = ["Teo Sibileau <teo@example.com>"]
+readme = "README.md"
+packages = [
+    { include = "wifiqr", from = "src" }
+]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+qrcode = "^8.2"
+python-dotenv = "^1.2.1"
+click = "^8.3.0"
+Pillow = "^10.0.0"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+
+[tool.poetry.scripts]
+wifiqr = "wifiqr.generator:main"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
