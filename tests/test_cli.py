@@ -32,9 +32,8 @@ class TestMainCLI:
         }
 
     @patch("wifiqr.generator.WiFiQRGenerator")
-    @patch("wifiqr.generator.load_dotenv")
     def test_main_with_env_vars_success(
-        self, mock_load_dotenv, mock_wifi_qr_generator, runner, mock_qr_image, env_vars
+        self, mock_wifi_qr_generator, runner, mock_qr_image, env_vars
     ):
         """Test successful execution with environment variables."""
         mock_generator_instance = MagicMock()

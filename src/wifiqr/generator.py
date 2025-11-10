@@ -18,9 +18,11 @@ class WiFiQRGenerator:
             encryption: Encryption type (WPA, WEP, nopass)
         """
         if not ssid:
-            raise ValueError("SSID must be provided")
+            msg = "SSID must be provided"
+            raise ValueError(msg)
         if not password and encryption != "nopass":
-            raise ValueError("Password must be provided for encrypted networks")
+            msg = "Password must be provided for encrypted networks"
+            raise ValueError(msg)
 
         self.ssid = ssid
         self.password = password
@@ -191,7 +193,7 @@ def main(output, ssid, password, encryption):
         click.echo(f"JPG saved to {output}")
     except ValueError as e:
         click.echo(f"Error: {e}", err=True)
-        raise click.Exit(1)
+        raise click.Exit(1) from None
 
 
 if __name__ == "__main__":
