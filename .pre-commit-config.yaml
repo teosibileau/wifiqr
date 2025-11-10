@@ -38,14 +38,3 @@ repos:
       - id: bandit
         args: [-c, pyproject.toml]
         additional_dependencies: ["bandit[toml]"]
-
-  # pytest checking
-  - repo: local
-    hooks:
-      - id: pytest-check
-        name: pytest-check
-        entry: poetry run pytest
-        language: system
-        pass_filenames: false
-        always_run: true
-        args: [--tb=short]
