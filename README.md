@@ -133,13 +133,6 @@ poetry run pytest tests/test_cli.py::TestMainCLI
 poetry run pytest tests/test_cli.py::TestGenerateWifiQR
 ```
 
-### Code Quality
-```bash
-# Run linting (if configured)
-poetry run flake8 src/
-poetry run black src/
-```
-
 ## Dependencies
 
 - `qrcode`: For generating QR codes
